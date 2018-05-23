@@ -1,8 +1,9 @@
 
              pipeline {
                  agent any
-             try {
+
                  stages {
+                     try {
                      stage('Build') {
                          checkout scm
                          steps {
@@ -24,10 +25,11 @@
                              echo 'Deploying....'
                          }
                      }
-                 }
-             }catch (e){
+                     }catch (e){
 
-                 currentBuild.result = "FAILED"
-             }
+                         currentBuild.result = "FAILED"
+                     }
+                 }
+
 
              }
