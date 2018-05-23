@@ -4,6 +4,7 @@
              try {
                  stages {
                      stage('Build') {
+                         checkout scm
                          steps {
                              echo 'Building..'
                              withMaven(maven: 'maven_3_5_3') {
