@@ -2,17 +2,15 @@
              pipeline {
                  agent any
 
-
-                     try {
+                 stages {
                      stage('Build') {
-                         checkout scm
                          steps {
                              echo 'Building..'
                              withMaven(maven: 'maven_3_5_3') {
-                                 sh "mvn clean compile -DskipTests"
+                                 sh 'mvn clean compile'
                              }
 
-                             currentBuild.result = "SUCCESS"
+
                          }
                      }
                      stage('Test') {
@@ -25,11 +23,7 @@
                              echo 'Deploying....'
                          }
                      }
-                     }catch (e){
-
-                         currentBuild.result = "FAILED"
-                     }
-
+                 }
 
 
              }
