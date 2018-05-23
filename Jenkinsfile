@@ -6,9 +6,7 @@
                      stage('Build') {
                          steps {
                              echo 'Building..'
-                             withMaven(maven:'maven_3_5_3') {
-                                 sh 'mvn clean compile'
-                             }
+
                          }
                      }
                      stage('Test') {
