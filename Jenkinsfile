@@ -2,7 +2,7 @@
              pipeline {
                  agent any
 
-                 stages {
+
                      try {
                      stage('Build') {
                          checkout scm
@@ -29,7 +29,7 @@
 
                          currentBuild.result = "FAILED"
                      }
-                 }
+
 
 
              }
