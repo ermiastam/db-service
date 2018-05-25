@@ -1,10 +1,12 @@
 
-             node {
+             node() {
 
                      stage('Build') {
 
                              echo 'Building..'
-                         sh "mvn clean install"
+                         withMaven(maven:'M3') {
+                             sh "mvn clean install"
+                         }
 
 
                      }
