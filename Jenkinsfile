@@ -4,6 +4,7 @@
                      stage('Build') {
 
                              echo 'Building..'
+                         sh "mvn clean install"
 
 
                      }
