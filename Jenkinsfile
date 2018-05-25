@@ -1,8 +1,6 @@
 
-             pipeline {
-                 agent any
+             node {
 
-                 stages {
                      stage('Build') {
                          steps {
                              echo 'Building..'
@@ -19,7 +17,5 @@
                              echo 'Deploying....'
                          }
                      }
-                 }
-
 
              }
