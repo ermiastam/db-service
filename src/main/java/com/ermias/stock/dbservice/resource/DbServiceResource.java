@@ -59,4 +59,15 @@ public class DbServiceResource {
 
         return findByUserName(userName);//should return nothing
     }
+
+    @GetMapping("/hello")
+    public String getstr(){
+
+        return "HI";
+    }
+
+
+
+
+
 }
